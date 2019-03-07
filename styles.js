@@ -6,24 +6,28 @@ const styles = StyleSheet.create({
     },
 
     result:{
-        flex:1,
+        flex:2,
         backgroundColor: "red",
     },
 
     calculation:{
-        flex:1
+        flex:1,
+        backgroundColor: "pink"
     },
 
     buttons:{
-        flex:1
+        flex:7,
+        flexDirection: "row"
     },
 
     numbers:{
-        flex:1
+        flex:2,
+        backgroundColor: "black"
     },
 
     operators:{
-        flex:1
+        flex:1,
+        backgroundColor: "yellow"
     }
 
 
