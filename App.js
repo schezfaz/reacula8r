@@ -37,6 +37,14 @@ export default class App extends Component{
         <View style={styles.result}>
           <Text style={styles.resultText}>786</Text>
         </View>
+        <View style={styles.utilities}>
+          <TouchableOpacity>
+            <Text>CLEAR</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text>DELETE</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.buttons}>
           <View style={styles.numbers}>
             {rows}

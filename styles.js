@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         flex:2,
         justifyContent: "center",
         alignItems: "flex-end",
-        backgroundColor: "red",
+        backgroundColor: "purple",
     },
 
     calculationText:{
@@ -28,6 +28,16 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 25,
         color: "white"
+    },
+
+    utilities:{
+        flex: 1,
+        flexDirection:"row",
+        justifyContent: "space-around",
+        alignItems: "center",
+        color: "white",
+        fontSize: 20,
+        backgroundColor: "grey"
     },
 
     buttons:{
@@ -65,10 +75,6 @@ const styles = StyleSheet.create({
         backgroundColor: "blue",
         alignItems: "stretch"
     }
-
-
-
-
 
 });
 
