@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native"
-import { bold } from "ansi-colors";
 
 const styles = StyleSheet.create({
     container: {
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
 
     numbers:{
         flex:3,
-        backgroundColor: "white"
+        backgroundColor: "black"
     },
 
     row:{
@@ -55,10 +54,15 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
 
+    buttText:{
+        fontSize: 30,
+        color: "white"
+    },
+
     operators:{
         flex:1,
         justifyContent: "space-around",
-        backgroundColor: "yellow",
+        backgroundColor: "blue",
         alignItems: "stretch"
     }
 

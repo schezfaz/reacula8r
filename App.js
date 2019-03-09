@@ -9,6 +9,26 @@ export default class App extends Component{
   }
 
   render(){
+    let rows=[]
+    let nums=[[1,2,3],[4,5,6],[7,8,9],[".",0,"="]]
+    for(let i=0;i<4;i++){
+      let row=[]
+      for(let j=0;j<3;j++){
+        row.push(<TouchableOpacity style={styles.butt}>
+          <Text style={styles.buttText}>{nums[i][j]}</Text>
+        </TouchableOpacity>)
+      }
+      rows.push(<View style={styles.row}>{row}</View>)
+    }
+
+    let operators=[]
+    let ops = ['+','-','*','/']
+    for (let x = 0; x<4;x++){
+      operators.push(<TouchableOpacity style={styles.butt}>
+        <Text style={styles.buttText}>{ops[x]}</Text>
+      </TouchableOpacity>)
+    }
+
     return( 
       <View style={styles.container}>
         <View style={styles.calculation}>
@@ -19,64 +39,10 @@ export default class App extends Component{
         </View>
         <View style={styles.buttons}>
           <View style={styles.numbers}>
-            <View style={styles.row}>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.row}>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.row}>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.row}>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.butt}>
-                <Text>0</Text>
-              </TouchableOpacity>
-            </View>
+            {rows}
           </View> 
           <View style={styles.operators}>
-            <TouchableOpacity style={styles.butt}>
-              <Text>0</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.butt}>
-              <Text>0</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.butt}>
-              <Text>0</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.butt}>
-              <Text>0</Text>
-            </TouchableOpacity>
+            {operators}
           </View>
         </View>
       </View>
