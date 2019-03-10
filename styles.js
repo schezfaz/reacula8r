@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     },
 
     calculationText:{
-        fontSize: 30,
+        fontSize: 35,
         color: 'black'
     },
 

@@ -75,21 +75,21 @@ export default class App extends Component{
 
   render(){
     let rows=[]
-    let nums=[[1,2,3],[4,5,6],[7,8,9],[".",0,"="]]
+    let nums=[[9,8,7],[6,5,4],[3,2,1],[".",0,"="]]
     for(let i=0;i<4;i++){
       let row=[]
       for(let j=0;j<3;j++){
-        row.push(<TouchableOpacity onPress={()=>this.buttonPressed(nums[i][j])} style={styles.butt}>
+        row.push(<TouchableOpacity key={nums[i][j]} onPress={()=>this.buttonPressed(nums[i][j])} style={styles.butt}>
           <Text style={styles.buttText}>{nums[i][j]}</Text>
         </TouchableOpacity>)
       }
-      rows.push(<View style={styles.row}>{row}</View>)
+      rows.push(<View key={i} style={styles.row}>{row}</View>)
     }
 
     let operators=[]
     let ops = ['+','-','*','/']
     for (let x = 0; x<4;x++){
-      operators.push(<TouchableOpacity onPress={()=>this.operate(ops[x])} style={styles.butt}>
+      operators.push(<TouchableOpacity key={ops[x]} onPress={()=>this.operate(ops[x])} style={styles.butt}>
         <Text style={styles.buttText}>{ops[x]}</Text>
       </TouchableOpacity>)
     }
@@ -103,10 +103,10 @@ export default class App extends Component{
           <Text style={styles.resultText}>{this.state.resultText}</Text>
         </View>
         <View style={styles.utilities}>
-          <TouchableOpacity onPress = {()=>this.clearData()}>
+          <TouchableOpacity key={"clear"} onPress = {()=>this.clearData()}>
             <Text style={styles.utilityText}>CLEAR</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=>this.deleteData()}>
+          <TouchableOpacity key = {"delete"}onPress={()=>this.deleteData()}>
             <Text style={styles.utilityText}>DELETE</Text>
           </TouchableOpacity>
         </View>
