@@ -26,9 +26,14 @@ export default class App extends Component{
 
   deleteData(){
     let text = this.state.calculationText.substring(0, this.state.calculationText.length-1)
-    console.log(text)
     this.setState({
       calculationText: text
+    })
+  }
+
+  clearData(){
+    this.setState({
+      calculationText: ""
     })
   }
 
@@ -62,7 +67,7 @@ export default class App extends Component{
           <Text style={styles.resultText}>786</Text>
         </View>
         <View style={styles.utilities}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress = {()=>this.clearData()}>
             <Text style={styles.utilityText}>CLEAR</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={()=>this.deleteData()}>
