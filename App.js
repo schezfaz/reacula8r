@@ -1,17 +1,21 @@
 import React, { Component } from "react"
-import {StyleSheet, Text, TouchableOpacity, View} from "react-native"
+import {Text, TouchableOpacity, View} from "react-native"
 import styles from "./styles"
 
 export default class App extends Component{
   constructor(){
     super()
     this.state = {
-      calculationText: ""
+      calculationText: "",
+      resultText: ""
     }
   }
 
   calculateResult(){
     const text = this.state.calculationText
+    this.setState({
+      resultText: eval(text)
+    })
   }
 
   buttonPressed(data){
@@ -24,6 +28,28 @@ export default class App extends Component{
     })
   }
 
+  operate(operation){
+    const lastCharacter = this.state.calculationText.split('').pop()
+    if(lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '*' || lastCharacter == '/') return
+    switch(operation){
+      case '+':
+
+      case '-':
+        this.setState({
+          calculationText: this.state.calculationText + operation
+        })
+        break;
+      case '*':
+
+      case '/':
+        if(this.state.calculationText == "") return
+        this.setState({
+          calculationText: this.state.calculationText + operation
+        })
+        
+    }
+  }
+
   deleteData(){
     let text = this.state.calculationText.substring(0, this.state.calculationText.length-1)
     this.setState({
@@ -33,7 +59,8 @@ export default class App extends Component{
 
   clearData(){
     this.setState({
-      calculationText: ""
+      calculationText: "",
+      resultText: ""
     })
   }
 
@@ -64,7 +91,7 @@ export default class App extends Component{
           <Text style={styles.calculationText}>{this.state.calculationText}</Text>
         </View>  
         <View style={styles.result}>
-          <Text style={styles.resultText}>786</Text>
+          <Text style={styles.resultText}>{this.state.resultText}</Text>
         </View>
         <View style={styles.utilities}>
           <TouchableOpacity onPress = {()=>this.clearData()}>
