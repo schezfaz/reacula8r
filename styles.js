@@ -9,17 +9,17 @@ const styles = StyleSheet.create({
         flex:2,
         justifyContent: "center",
         alignItems: "flex-end",
-        backgroundColor: "purple",
+        backgroundColor: "#DCDCDC",
     },
 
     calculationText:{
         fontSize: 30,
-        color: 'white'
+        color: 'black'
     },
 
     result:{
         flex:1,
-        backgroundColor: "pink",
+        backgroundColor: "#DCDCDC",
         justifyContent: "center",
         alignItems: "flex-end"
     },
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     resultText:{
         fontWeight: "bold",
         fontSize: 25,
-        color: "white"
+        color: "black"
     },
 
     utilities:{
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         justifyContent: "space-around",
         alignItems: "center",
-        backgroundColor: "grey"
+        backgroundColor: "#696969"
     },
 
     utilityText:{
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
     numbers:{
         flex:3,
-        backgroundColor: "black"
+        backgroundColor: "#434343"
     },
 
     row:{
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     operators:{
         flex:1,
         justifyContent: "space-around",
-        backgroundColor: "blue",
+        backgroundColor: "#808080",
         alignItems: "stretch"
     }
 
