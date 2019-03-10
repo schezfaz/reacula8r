@@ -18,9 +18,18 @@ export default class App extends Component{
     })
   }
 
+  validate(){
+    const text = this.state.calculationText
+    if(text.slice(-1)=="+"||text.slice(-1)=="-"||text.slice(-1)=="*"||text.slice(-1)=="/"){
+      return false //also make a toast maybe 
+    }
+
+    return true
+  }
+
   buttonPressed(data){
     if(data == '='){
-      return this.calculateResult(this.state.calculationText)
+      return this.validate() && this.calculateResult()
     }
 
     this.setState({
