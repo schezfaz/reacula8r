@@ -31,13 +31,16 @@ const styles = StyleSheet.create({
     },
 
     utilities:{
-        flex: 1,
+        flex: 0.7,
         flexDirection:"row",
         justifyContent: "space-around",
         alignItems: "center",
-        color: "white",
-        fontSize: 20,
         backgroundColor: "grey"
+    },
+
+    utilityText:{
+        color: "white",
+        fontSize: 18
     },
 
     buttons:{
